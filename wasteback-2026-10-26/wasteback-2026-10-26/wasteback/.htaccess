@@ -1,0 +1,12 @@
+# Local XAMPP safety net. The project sits inside htdocs, so without this
+# .env, storage/ and the code could be downloaded. Everything is routed
+# into public/, where Laravel's own rules apply.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^$ %{REQUEST_URI}public/ [R=302,L]
+  RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+  Require all denied
+</IfModule>

@@ -1,0 +1,110 @@
+WASTEBACK - HOW TO INSTALL ON A WINDOWS LAPTOP
+==============================================
+
+WasteBack is a Laravel website. It runs on your own laptop using XAMPP.
+Setup takes about 10 minutes. All pictures are stored inside the project,
+so they show even when the laptop is offline.
+
+
+WHAT YOU NEED
+-------------
+- A Windows 10 or 11 laptop
+- XAMPP with PHP 8.2 or newer (free)
+- The file wasteback-<date>.zip
+
+
+STEP 1: INSTALL XAMPP (skip if you already have XAMPP 8.2 or newer)
+-------------------------------------------------------------------
+1. Go to https://www.apachefriends.org and download XAMPP for Windows
+   (version 8.2 or newer).
+2. Run the installer and keep the default folder: C:\xampp
+3. When it finishes, open the "XAMPP Control Panel".
+
+Check your version: an old XAMPP (PHP 7 or 8.0/8.1) will NOT work.
+
+
+STEP 2: START MYSQL
+-------------------
+In the XAMPP Control Panel, click "Start" next to MySQL.
+It turns green. (Apache does not need to be started.)
+
+
+STEP 3: UNZIP THE PROJECT
+-------------------------
+1. Right-click the zip file and choose "Extract All...".
+2. Extract it into  C:\xampp\htdocs
+3. You should now have the folder  C:\xampp\htdocs\wasteback
+
+Do NOT extract it on the Desktop or inside OneDrive / Google Drive.
+Those folders can block the website from saving files.
+
+
+STEP 4: RUN THE SETUP (only once)
+---------------------------------
+1. Open the folder  C:\xampp\htdocs\wasteback
+2. Double-click  setup.bat
+3. If Windows shows "Windows protected your PC", click
+   "More info" and then "Run anyway".
+4. Wait until it says "Setup complete", then press any key.
+
+This creates the database and fills it with demo data.
+
+
+STEP 5: OPEN THE WEBSITE
+------------------------
+1. Double-click  start.bat
+2. Your browser opens  http://127.0.0.1:8000
+3. Keep the black window open while you use the site.
+   Close it when you are done.
+
+Next time you want to use the site: start MySQL in XAMPP,
+then double-click start.bat. You do not need setup.bat again.
+
+
+DEMO LOGINS
+-----------
+Password for all accounts:  password
+
+  Household (seller)   household@wasteback.ug
+  Field agent          agent@wasteback.ug
+  Administrator        admin@wasteback.ug
+
+You can also create a new household account with "Sign Up".
+
+
+A QUICK DEMO TO TRY
+-------------------
+1. Sign in as the household and book a pickup.
+2. Sign out, sign in as the administrator, open "Pickups and Dispatch"
+   and assign the pickup to Okello Brian.
+3. Sign out, sign in as the agent, open the pickup, enter the weights
+   and confirm. The household's wallet is paid automatically.
+4. As the administrator, open "Inventory Pool" to see the stock grow.
+
+
+PROBLEMS?
+---------
+"Could not connect to MySQL"
+    MySQL is not started. Start it in the XAMPP Control Panel.
+
+"PHP was not found" or "PHP is older than 8.2"
+    Install XAMPP 8.2 or newer into C:\xampp.
+
+MySQL will not start in XAMPP (port 3306 in use)
+    Another MySQL program is running. Close it, or restart the laptop.
+
+The page says "This site can't be reached"
+    start.bat is not running. Double-click it again and keep it open.
+
+Pictures do not show
+    The zip was not fully extracted. Check that the folder
+    C:\xampp\htdocs\wasteback\public\images has pictures in it.
+    If it is empty, extract the zip again.
+
+Want to reset all demo data?
+    Run setup.bat again. It wipes the WasteBack database and reloads
+    the demo data.
+
+
+Note: mobile money withdrawals in WasteBack are simulated.
+No real money is sent.
